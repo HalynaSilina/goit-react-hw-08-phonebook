@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { Form, Label, Input, Button } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'api/contacts';
-import { getContacts } from 'redux/selectors';
+import { addContact } from 'redux/contacts/contactsThunks';
+import { getContacts } from 'redux/contacts/selectors';
 
 const ContactForm = () => {
   const [userName, setUserName] = useState('');
