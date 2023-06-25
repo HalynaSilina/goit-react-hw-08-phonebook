@@ -5,7 +5,8 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from 'components/Layout/Layout';
 import { useDispatch } from 'react-redux';
 import { fetchCurrentUser } from 'redux/auth/authThunks';
-import PrivateRoute from 'components/Routes/PrivateRoute/PrivateRoute';
+import PrivateRoute from 'components/Routes/PrivateRoute';
+import RestrictedRoute from 'components/Routes/RestrictedRoute';
 
 const Home = lazy(() => import('../../pages/Home/Home'));
 const Contacts = lazy(() => import('../../pages/Contacts/Contacts'));
@@ -30,8 +31,22 @@ const App = () => {
             </PrivateRoute>
           }
         />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
+        <Route
+          path="register"
+          element={
+            <RestrictedRoute>
+              <Register />
+            </RestrictedRoute>
+          }
+        />
+        <Route
+          path="login"
+          element={
+            <RestrictedRoute>
+              <Login />
+            </RestrictedRoute>
+          }
+        />
       </Route>
     </Routes>
   );

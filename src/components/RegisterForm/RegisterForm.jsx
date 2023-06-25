@@ -31,7 +31,7 @@ const RegisterForm = () => {
       {/* Min 7 symbols for password */}
       <label>
         Password
-        <input type="text" name="password" />
+        <input type="text" name="password" autoComplete="off"/>
       </label>
       <button type="submit">Register</button>
     </form>
