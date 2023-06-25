@@ -10,7 +10,7 @@ const userInitialState = {
   user: { name: null, password: null },
   token: null,
   isLoggedIn: false,
-  isRefresh: false,
+  isRefreshed: false,
 };
 
 const authSlice = createSlice({
@@ -36,11 +36,11 @@ const authSlice = createSlice({
       .addCase(fetchCurrentUser.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoggedIn = true;
-        state.isRefresh = false;
+        state.isRefreshed = false;
       }).addCase(fetchCurrentUser.pending, state => {
-        state.isRefresh = true;
+        state.isRefreshed = true;
       }).addCase(fetchCurrentUser.rejected, state=> {
-        state.isRefresh = true;
+        state.isRefreshed = true;
       });
   },
 });
