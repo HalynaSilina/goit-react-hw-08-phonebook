@@ -23,8 +23,9 @@ const App = () => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
 
-  return (
-    isRefreshing ? <Loader/> : (
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -53,7 +54,7 @@ const App = () => {
           }
         />
       </Route>
-    </Routes>)
+    </Routes>
   );
 };
 
