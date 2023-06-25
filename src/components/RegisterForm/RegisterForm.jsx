@@ -28,6 +28,7 @@ const RegisterForm = () => {
         E-mail
         <input type="mail" name="email" />
       </label>
+      {/* Min 7 symbols for password */}
       <label>
         Password
         <input type="text" name="password" />
