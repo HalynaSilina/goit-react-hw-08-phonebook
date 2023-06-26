@@ -21,12 +21,12 @@ const Contacts = () => {
   }, [dispatch]);
   return (
     <Container>
+      <Title>Contacts</Title>
       <ContactForm />
       {isLoading && !error && <Loader />}
       {error && <Error />}
       {contacts.length !== 0 && (
         <>
-          <Title>Contacts</Title>
           <Filter />
           {!isLoading && <ContactList />}
         </>
