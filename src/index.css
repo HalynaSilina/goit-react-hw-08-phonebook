@@ -6,8 +6,8 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #c9f7ff;
+  -moz-osx-font-smoothing: grayscale;}
+  /* background-color: #c9f7ff;
   background-image: url(./images/back-mobile.jpg);
   background-position: center;
   background-size: cover;
@@ -35,7 +35,7 @@ body {
       background-image: url(./images/back-desktop-2x.jpg);
     }
   }
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
