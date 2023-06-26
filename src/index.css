@@ -7,15 +7,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-   background-color: #c9f7ff;
+  background-color: #c9f7ff;
   color: #321c01;
+  background-image: url(./images/back-mobile.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
-/* background-image: url(./images/back-mobile.jpg);
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
 @media screen and (min-width: 425px) {
   body {
     background-image: url(./images/back-tablet.jpg);
@@ -35,7 +34,7 @@ background-attachment: fixed;
       background-image: url(./images/back-desktop-2x.jpg);
     }
   }
-} */ 
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

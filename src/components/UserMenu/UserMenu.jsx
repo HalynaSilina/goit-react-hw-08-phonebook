@@ -1,7 +1,9 @@
+import { Button } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userLogOut } from "redux/auth/authThunks";
 import { getUser } from "redux/auth/selectors";
+import { Box, GreetingText } from "./UserMenu.styled";
 
 const UserMenu = () => {
 const dispatch = useDispatch();
@@ -13,12 +15,12 @@ const handleLogOut = () => {
 }
 
 return (
-    <div>
-      <p>Welcome, {user.name}</p>
-      <button type="button" onClick={handleLogOut}>
-        Logout
-      </button>
-    </div>
+    <Box>
+      <GreetingText>Welcome, {user.name}</GreetingText>
+      <Button type="button" onClick={handleLogOut} variant="contained" color="secondary" sx={{ m: 1 }}>
+        Log Out
+      </Button>
+    </Box>
   );
 }
  export default UserMenu;

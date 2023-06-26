@@ -8,6 +8,7 @@ import { PrivateRoute } from 'components/Routes/PrivateRoute';
 import { RestrictedRoute } from 'components/Routes/RestrictedRoute';
 import { getIsRefreshed } from 'redux/auth/selectors';
 import Loader from 'components/Loader/Loader';
+import CssBaseline from '@mui/material/CssBaseline';
 
 const Home = lazy(() => import('../../pages/Home/Home'));
 const Contacts = lazy(() => import('../../pages/Contacts/Contacts'));
@@ -22,28 +23,33 @@ const App = () => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <Loader />
-  ) : (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route
-          path="contacts"
-          element={
-            <PrivateRoute redirectTo="/login" component={<Contacts />} />
-          }
-        />
-        <Route
-          path="register"
-          element={<RestrictedRoute component={<Register />} />}
-        />
-        <Route
-          path="login"
-          element={<RestrictedRoute component={<Login />} />}
-        />
-      </Route>
-    </Routes>
+  return (
+    <>
+      <CssBaseline />
+      {isRefreshing ? (
+        <Loader />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route
+              path="contacts"
+              element={
+                <PrivateRoute redirectTo="/login" component={<Contacts />} />
+              }
+            />
+            <Route
+              path="register"
+              element={<RestrictedRoute component={<Register />} />}
+            />
+            <Route
+              path="login"
+              element={<RestrictedRoute component={<Login />} />}
+            />
+          </Route>
+        </Routes>
+      )}
+    </>
   );
 };
 

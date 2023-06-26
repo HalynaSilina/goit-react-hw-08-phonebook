@@ -1,9 +1,9 @@
-import {Container} from './Home.styled';
+import { Typography } from '@mui/material';
 
 export default function Home() {
     return (
-      <Container>
-        <h1>Phonebook</h1>
-      </Container>
+      <>
+        <Typography variant="h1" align="center" sx={{fontSize: 76, fontWeight: 700, fontStyle: 'italic', marginTop: 2}}>Phonebook</Typography>
+      </>
     );
   }
